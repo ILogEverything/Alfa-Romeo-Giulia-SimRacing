@@ -221,6 +221,7 @@ Standard Arduino pin mapping for SPI and interrupts. Ensure the pins match your 
 | **ESC Light**       | CAN1 – Only `BeamNg`                                     |
 | **Handbrake Light** | CAN1 – Only `BeamNg`                                     |
 | **DNA**             | CAN1 – Idle in `Normal` due to games support             |
+| **SHIFT LIGHT**     | CAN1 - Read DNA problem, working on a workaround         |
 | **Current Gear**    | CAN1                                                     |
 | **External Temp**   | CAN2 - Realistic in `Assetto Corsa`, dummy in `BeamNg`   |
 | **MEDIA_STRING**    | CAN2 - Best Lap in `Assetto Corsa`, dummy in `BeamNg`    |
