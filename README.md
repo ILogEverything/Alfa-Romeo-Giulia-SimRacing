@@ -1,4 +1,4 @@
-# Alfa Giulia/Stelvio Virtual Dashboard Interface
+# Alfa Giulia/Stelvio Dashboard Interface
 
 A real-time telemetry interface designed specifically for **Alfa Romeo Giulia / Stelvio dashboards**, using two **MCP2515 CAN modules**.  
 It receives live telemetry from **BeamNG.drive** or **Assetto Corsa** and drives a real cluster via **CAN bus**, emulating OEM behavior.
@@ -12,6 +12,8 @@ It receives live telemetry from **BeamNG.drive** or **Assetto Corsa** and drives
 - ✅ Dual **MCP2515** support (500 kbps CAN + 125 kbps IHS)
 - ✅ Real-time **serial communication** from PC
 - ✅ Supports **BeamNG.drive** and **Assetto Corsa**
+
+☕️ Like this project? Support it with a coffee! Your help keeps dashboards alive and wheels spinning. -> https://paypal.me/xb6783746
 
 ---
 
