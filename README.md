@@ -56,7 +56,7 @@ MEDIA_STRING:Best Lap: 1:45.872
 File: `Config.h`
 
 ```cpp
-#define CAN2_PRESENTE  // Uncomment to enable IHS bus (CAN2)
+#define CAN2_OPTIONAL  // Uncomment to enable IHS bus (CAN2)
 ```
 
 ---
