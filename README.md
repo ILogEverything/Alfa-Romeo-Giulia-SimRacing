@@ -55,9 +55,9 @@ MEDIA_STRING:Best Lap: 1:45.872
 
 ## 🔧 Arduino Requirements
 
-- Arduino IDE
-- Board: Arduino Uno, Nano, Micro (o compatibile)
-- Library: [`mcp_can` by coryjfowler](https://github.com/coryjfowler/MCP_CAN_lib)
+- Arduino IDE.
+- Board: Arduino Uno, Nano, Micro.
+- Library: [mcp_can by coryjfowler] (https://github.com/coryjfowler/MCP_CAN_lib)
 
 Install with:
 
