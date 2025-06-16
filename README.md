@@ -211,6 +211,24 @@ Standard Arduino pin mapping for SPI and interrupts. Ensure the pins match your 
 
 ---
 
+| Feature             | Can Bus                                                  |
+|---------------------|----------------------------------------------------------|
+| **Rpm**             | CAN1                                                     |
+| **Speed**           | CAN1                                                     |
+| **Oil Temperature** | CAN1                                                     |
+| **Fuel Level**      | CAN1                                                     |
+| **ABS Light**       | CAN1 – Only `BeamNg`                                     |
+| **ESC Light**       | CAN1 – Only `BeamNg`                                     |
+| **Handbrake Light** | CAN1 – Only `BeamNg`                                     |
+| **DNA**             | CAN1 – Idle in `Normal` due to games support             |
+| **Current Gear**    | CAN1                                                     |
+| **External Temp**   | CAN2 - Realistic in `Assetto Corsa`, dummy in `BeamNg`   |
+| **MEDIA_STRING**    | CAN2 - Best Lap in `Assetto Corsa`, dummy in `BeamNg`    |
+
+![photo_2025-06-16_22-49-17](https://github.com/user-attachments/assets/797eec8e-579b-4dec-9faa-3c7e21724716)
+
+---
+
 ## ⚠️ Notes
 
 - In BeamNG, enable OutGauge
