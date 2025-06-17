@@ -181,6 +181,28 @@ Pins used for SPI and CAN module interrupts. Compatible with standard MCP2515 mo
 Standard Arduino pin mapping for SPI and interrupts. Ensure the pins match your wiring.
 
 ---
+![Connettore](https://github.com/user-attachments/assets/3c094945-f1c9-4e3a-9795-c4596a38559c)
+
+
+| Pin | Description        |
+|-----|--------------------|
+| 1   | Ground             |
+| 2   | Battery            |
+| 3   | ACC                |
+| 5   | BH - CAN A (Low)   |
+| 6   | BH - CAN B (High)  |
+| 11  | CAN-C1 A (Low)     |
+| 12  | CAN-C1 A (Low)     |
+| 13  | CAN-C1 B (High)    |
+| 14  | CAN-C1 B (High)    |
+
+> ⚠️ Notes:
+> - Pins **2 and 3** must be bridged together to supply +12v.
+> - Pins **11 and 12** are electrically connected together (same for **13 and 14**).  
+
+> - You can connect either pin in each pair—CAN A/B pairing order does not matter.
+> - I personally supply **14.4V** using a variable power supply.
+---
 
 ## 🖥️ File Structure
 
