@@ -327,7 +327,8 @@ Use the following parameters in Python script:
 | **MEDIA**           | CAN2 - Best Lap in `Assetto Corsa`, dummy in `BeamNg`    |
 
 `*This feature is fully implemented in the code, but lacks proper game telemetry support for now. A workaround is being developed.`
-> ⚠️ When the cluster is in **RACE** profile, **MEDIA** and **External Temp** lines are not available and cannot be displayed.    
+> ⚠️ When the cluster is in **RACE** profile, **MEDIA** and **External Temp** lines on 7" dashboards are not available and cannot be displayed.    
+
 > ℹ️ The optional second CAN module (IHS) helps **prevent odometer blinking** by providing additional messages expected by the cluster.
 
 My glorious Setup:
