@@ -95,16 +95,18 @@ https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectron
 
 6. Set the following:
 
-| Setting                 | Value                                      |
-|-------------------------|--------------------------------------------|
-| Board                   | Generic STM32F4 series                     |
-| Board part number       | Generic F401CCUx                           |
+| Setting                 | Value                                     |
+|-------------------------|-------------------------------------------|
+| Board                   | Generic STM32F4 series*                   |
+| Board part number       | Generic F401CCUx*                         |
 | Upload method           | STM32CubeProgrammer (DFU)                 |
 | Optimize                | Smallest (-Os default)                    |
 | C Runtime Library       | Newlib Nano + Float Printf                |
 | USB Support             | CDC (generic "Serial" supersede U(S)ART)  |
 | U(S)ART Support         | Disabled (no Serial support)              |
 | USB Speed               | Low/Full Speed                            |
+
+`*STM32F401CCU6 Black Pill, adjust according to your board`
 
 ---
 
@@ -245,12 +247,12 @@ Use the following parameters in Python script:
 > - You can connect either pin in each pair CAN A/B pairing order does not matter.
 > - I personally supply **14.4V** using a variable power supply.
 
-> ⚠️ If you don’t have the original OEM connector for the cluster, don’t worry — it’s not a problem.  
-> Standard **Dupont jumper wires** or **2.54mm pitch connectors** (e.g., 2x6) can be used reliably without major issues.
+> - If you don’t have the original OEM connector for the cluster, don’t worry — it’s not a problem.     
+>       Standard **Dupont jumper wires** or **2.54mm pitch connectors** (e.g., 2 pieces 1x6) can be used reliably without major issues.
 
-### SPI & CAN Wiring (STM32)
+### 🔌 SPI & CAN Wiring (STM32)
 
-#### Shared SPI Bus
+#### 🧩 Shared SPI Bus
 
 | STM32 Pin | MCP2515 #1  | MCP2515 #2  | Description         |
 |-----------|-------------|-------------|---------------------|
@@ -260,7 +262,7 @@ Use the following parameters in Python script:
 | 3.3V      | VCC         | VCC         | Logic power         |
 | GND       | GND         | GND         | Common ground       |
 
-#### Chip Select & Interrupts
+#### 🔧 Chip Select & Interrupts
 
 | STM32 Pin | CAN Module  | Description            |
 |-----------|-------------|------------------------|
@@ -332,6 +334,7 @@ Use the following parameters in Python script:
 > ℹ️ The optional second CAN module (IHS) helps **prevent odometer blinking** by providing additional messages expected by the cluster.
 
 My glorious Setup:
+
 ![photo_2025-06-18_21-43-05](https://github.com/user-attachments/assets/05503a44-37b6-490e-b8a1-c3d60526ebee)
 
 ![photo_2025-06-16_22-49-17](https://github.com/user-attachments/assets/797eec8e-579b-4dec-9faa-3c7e21724716)
