@@ -61,7 +61,7 @@ MEDIA:Best Lap: 1:45.872
 📁 /Windows [Python]/                 --> Games Support / Windows
 📄 README.md                          --> This file
 ```
-
+> 🗂️ From v1.1 files are distributed individually and not as ZIPs for better readability, diffing, and version tracking on GitHub.
 ---
 
 ## 🔧 Software Requirements (Board Side)
@@ -210,7 +210,7 @@ Use the following parameters in Python script:
 | Item         | Value  | Description                       |
 |--------------|--------|-----------------------------------|
 | SERIAL_PORT  | "COMx" | Adjust according to your system   |
-| BAUD_RATE    | 115200 | Must match the STM32 USB CDC speed|
+| BAUD_RATE    | 250000 | Must match the STM32 USB CDC speed|
 
 ---
 
