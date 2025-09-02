@@ -57,11 +57,9 @@ MEDIA:Best Lap: 1:45.872
 ## 📁 File Structure
 
 ```
-📁 /AlfaRomeoGiuliaSimRacing/         --> Arduino / STM32 code
-📁 /Windows [Python]/                 --> Games Support / Windows
-📄 README.md                          --> This file
-```
-> 🗂️ From v1.1 files are distributed individually and not as ZIPs for better readability, diffing, and version tracking on GitHub.
+📁 Alfa-Romeo-Giulia-SimRacing.7z          --> Arduino / STM32 code
+📁 python.7z                               --> Games Support / Windows
+```.
 ---
 
 ## 🔧 Software Requirements (Board Side)
