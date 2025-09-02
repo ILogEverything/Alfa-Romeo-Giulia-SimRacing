@@ -59,7 +59,7 @@ MEDIA:Best Lap: 1:45.872
 ```
 📁 Alfa-Romeo-Giulia-SimRacing.7z          --> Arduino / STM32 code
 📁 python.7z                               --> Games Support / Windows
-```.
+```
 ---
 
 ## 🔧 Software Requirements (Board Side)
