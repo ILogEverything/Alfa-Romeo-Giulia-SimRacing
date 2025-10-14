@@ -344,6 +344,8 @@ My glorious Setup:
 
 ![photo_2025-06-16_22-49-17](https://github.com/user-attachments/assets/797eec8e-579b-4dec-9faa-3c7e21724716)
 
+![IMG_20251014_14430014](https://github.com/user-attachments/assets/0277accf-c77f-4760-9844-dffda2b83882)
+
 ---
 
 ## ⚠️ Known Notes
