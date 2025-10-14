@@ -59,11 +59,14 @@ MEDIA:Best Lap: 1:45.872
 ```
 📁 Alfa-Romeo-Giulia-SimRacing.7z          --> Arduino / STM32 code
 📁 Python.7z                               --> Games Support / Windows
-📁 BeamNG_Script.7z                        --> BeamNG Extended Support* / Windows
+📁 BeamNG_Script.7z                        --> BeamNG Extended Support*
 ```
+*unzip in
 ```
-*unzip in C:\Users\%User%\AppData\Local\BeamNG\BeamNG.drive\current\mods\unpacked or equivalent folder
+C:\Users\%User%\AppData\Local\BeamNG\BeamNG.drive\current\mods\unpacked
 ```
+or equivalent folder
+
 ---
 
 ## 🔧 Software Requirements (Board Side)
@@ -356,7 +359,7 @@ My glorious Setup:
     - ~~**Headlights**~~
 
   - The following warnings are **suppressed**, but not yet synchronized with game logic:
-    - ~~**Airbag**~~
+    - **Airbag**
     - **MIL (Check Engine)**
     - **Clock/Time**
     - ~~**Turn Signals / Indicators**~~
