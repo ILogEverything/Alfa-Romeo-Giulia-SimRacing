@@ -58,7 +58,11 @@ MEDIA:Best Lap: 1:45.872
 
 ```
 📁 Alfa-Romeo-Giulia-SimRacing.7z          --> Arduino / STM32 code
-📁 python.7z                               --> Games Support / Windows
+📁 Python.7z                               --> Games Support / Windows
+📁 BeamNG_Script.7z                        --> BeamNG Extended Support* / Windows
+```
+```
+*unzip in C:\Users\%User%\AppData\Local\BeamNG\BeamNG.drive\current\mods\unpacked or equivalent folder
 ```
 ---
 
@@ -349,17 +353,17 @@ My glorious Setup:
     - **TPMS (Tire Pressure Monitoring System)**
     - **Power Steering Fault**
     - **Lane Assist / Lane Departure Warning**
-    - **Headlights**
+    - ~~**Headlights**~~
 
   - The following warnings are **suppressed**, but not yet synchronized with game logic:
-    - **Airbag**
+    - ~~**Airbag**~~
     - **MIL (Check Engine)**
     - **Clock/Time**
-    - **Turn Signals / Indicators**
+    - ~~**Turn Signals / Indicators**~~
 
 - **BeamNG.drive**:
   - Enable **OutGauge** in the settings menu.
-  - A **low fuel alert** may briefly appear after respawning.
+  - ~~A **low fuel alert** may briefly appear after respawning.~~
 
 - **Assetto Corsa**:
   - No plugin required — uses native **shared memory** access.
