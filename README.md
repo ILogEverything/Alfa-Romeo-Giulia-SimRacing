@@ -327,8 +327,8 @@ Use the following parameters in Python script:
 | **ABS Light**       | CAN1 – Only `BeamNg`                                     |
 | **ESC Light**       | CAN1 – Only `BeamNg`                                     |
 | **Handbrake Light** | CAN1 – Only `BeamNg`                                     |
-| **DNA**             | CAN1 – Idle in `Normal`*                                 |
-| **Shift Light**     | CAN1 - It works only in `RACE`, Read `DNA` problem*      |
+| **DNA**             | CAN1                                                     |
+| **Shift Light**     | CAN1 - It works only in `RACE` (OEM)                     |
 | **Current Gear**    | CAN1                                                     |
 | **External Temp**   | CAN2 - Realistic in `Assetto Corsa`, dummy in `BeamNg`   |
 | **MEDIA**           | CAN2 - Best Lap in `Assetto Corsa`, dummy in `BeamNg`    |
