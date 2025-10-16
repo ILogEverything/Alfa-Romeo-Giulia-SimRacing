@@ -231,7 +231,7 @@ Use the following parameters in Python script:
 
 ## 🔌 Connector Pinout
 
-![Connettore](https://github.com/user-attachments/assets/3c094945-f1c9-4e3a-9795-c4596a38559c)
+<img width="400" height="400" alt="pinout" src="https://github.com/user-attachments/assets/09b28981-344a-43b1-b7a6-24f81891c39b" />
 
 | Pin | Description        |
 |-----|--------------------|
