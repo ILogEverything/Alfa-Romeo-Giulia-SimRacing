@@ -40,7 +40,7 @@ Your support helps keep dashboards alive and wheels spinning.
 
 ## 🔌 Serial Protocol (PC → MCU)
 
-ASCII lines in format KEY:VALUE, one per line.
+ASCII lines in format {KEY[VALUE]}, one per line.
 
 ### Example:
 ```
@@ -72,7 +72,7 @@ or equivalent folder
 ## 🔧 Software Requirements (Board Side)
 
 - **Arduino IDE**
-- Supported Boards: **Arduino Uno, Nano, Micro**
+- Supported Boards: **Arduino all variants**
 - MCP2515 Library: [`MCP_CAN` by coryjfowler](https://github.com/coryjfowler/MCP_CAN_lib)
 
 ### Installation Steps
@@ -138,9 +138,15 @@ Enable second CAN bus (IHS).
 ```c
 // #define MY23   // For 2023 clusters (shift light handling)
 // #define SHIFT  // Enable shift light for 7" TFT only
+
+#define LEVEL_1 5400 // rpm value
+#define LEVEL_2 5900 // rpm value
+#define LEVEL_3 6400 // rpm value
+
 ```
 - `MY23`: activates special handling for Giulia/Stelvio MY2023 cluster.
 - `SHIFT`: enables shift light display on 7" dashboards, don't use on 3.5".
+- `LEVEL_*`: 7" dashboards support 3 SHIFT warning levels. Ensure RACE mode is enabled in the cluster via PROXI alignment.
 
 Leave them commented unless you need these features.
 ### CAN Bus Settings
