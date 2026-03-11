@@ -20,10 +20,10 @@ Your support helps keep dashboards alive and wheels spinning.
 
 ## 🎮 Supported Simulators
 
-| Simulator        | Protocol      |
-|------------------|---------------|
-| BeamNG.drive     | OutGauge      |
-| Assetto Corsa    | Shared Memory |
+| Simulator        | Protocol       |
+|------------------|----------------|
+| BeamNG.drive     | OutGauge + Mod |
+| Assetto Corsa    | Shared Memory  |
 
 ---
 
