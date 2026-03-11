@@ -44,12 +44,12 @@ ASCII lines in format KEY:VALUE, one per line.
 
 ### Example:
 ```
-RPM:3100
-VEL:88
-TMPOLIO:90
-CARB:64
-MARCIA:3
-MEDIA:Best Lap: 1:45.872
+{RPM[3100]}
+{VEL[88]}
+{TMPOLIO[64]}
+{CARB[54]}
+{MARCIA[3]}
+{MEDIA[Best Lap: 1:45.872]}
 ```
 
 ---
@@ -57,13 +57,13 @@ MEDIA:Best Lap: 1:45.872
 ## 📁 File Structure
 
 ```
-📁 Alfa-Romeo-Giulia-SimRacing.7z          --> Arduino / STM32 code
-📁 Python.7z                               --> Games Support / Windows
-📁 BeamNG_Script.7z                        --> BeamNG Extended Support*
+📁 Alfa-Romeo-Giulia-SimRacing.zip        --> Arduino / STM32 code
+📁 Python.zip                             --> Games Support / Windows
+📁 ARG_SimR.zip                           --> BeamNG Mod*
 ```
-*unzip in
+*place ARG_SimR.zip in
 ```
-C:\Users\%User%\AppData\Local\BeamNG\BeamNG.drive\current\mods\unpacked
+C:\Users\%User%\AppData\Local\BeamNG\BeamNG.drive\current\mods
 ```
 or equivalent folder
 
@@ -354,14 +354,14 @@ My glorious Setup:
     This is expected and will clear automatically after a few seconds.  
 
   - Development is in progress to remove or map them to game events where possible:
-    - **TPMS (Tire Pressure Monitoring System)**
-    - **Power Steering Fault**
-    - **Lane Assist / Lane Departure Warning**
+    - ~~**TPMS (Tire Pressure Monitoring System)**~~
+    - ~~**Power Steering Fault**~~
+    - ~~**Lane Assist / Lane Departure Warning**~~
     - ~~**Headlights**~~
 
   - The following warnings are **suppressed**, but not yet synchronized with game logic:
-    - **Airbag**
-    - **MIL (Check Engine)**
+    - ~~**Airbag**~~
+    - ~~**MIL (Check Engine)**~~
     - **Clock/Time**
     - ~~**Turn Signals / Indicators**~~
 
@@ -371,7 +371,7 @@ My glorious Setup:
 
 - **Assetto Corsa**:
   - No plugin required — uses native **shared memory** access.
-  - On the **first launch** of Assetto Corsa make sure to **enter the track at least once before running the Python script**.
+  - ~~On the **first launch** of Assetto Corsa make sure to **enter the track at least once before running the Python script**.~~
 
 ---
 
