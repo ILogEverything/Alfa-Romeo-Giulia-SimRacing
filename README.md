@@ -391,15 +391,15 @@ My glorious Setup:
 - **Assetto Corsa**:
    - No plugin required — uses **shared memory**
 
- - Supported:
-   - Core telemetry (RPM, speed, gear, fuel)
-   - Secondary warnings (ABS, ESC)
-   - External temperature
-   - Lap time via MEDIA
+   - Supported:
+     - Core telemetry (RPM, speed, gear, fuel)
+     - Secondary warnings (ABS, ESC)
+     - External temperature
+     - Lap time via MEDIA
 
- - Limitations:
-   - **No primary lights support** (indicators, headlights, fog lights)
-   - **No handbrake / battery / check engine signals**
+   - Limitations:
+     - **No primary lights support** (indicators, headlights, fog lights)
+     - **No handbrake / battery / check engine signals**
 
 ---
 
