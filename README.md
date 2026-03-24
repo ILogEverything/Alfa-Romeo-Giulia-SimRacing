@@ -1,20 +1,17 @@
 # Alfa Giulia / Stelvio Dashboard Interface
 
-A real-time telemetry interface for **Alfa Romeo Giulia / Stelvio** dashboards, using two **MCP2515 CAN modules**.  
-It reads live data from SimRacing games and controls a real Alfa Romeo Giulia/Stelvio OEM cluster via **CAN bus**, closely emulating factory behavior.
+A real-time telemetry interface for Alfa Romeo Giulia / Stelvio dashboards using two MCP2515 CAN modules.
+It streams live data from sim racing titles to a genuine OEM cluster over CAN bus, replicating factory behavior with high accuracy.
 
 ---
 
 ## 🚗 Features
 
-- ✅ Full support for **Alfa Romeo Giulia / Stelvio** instrument clusters  
+- ✅ Full support for **Alfa Romeo Giulia / Stelvio** OEM instrument clusters  
 - ✅ Compatible with both **Arduino** and **STM32** platforms  
-- ✅ Dual **CAN Bus** communication:
-  - 500 kbps (Powertrain CAN)
-  - 125 kbps (Infotainment / IHS CAN)
-
-☕️ Like the project? [Buy me a coffee](https://paypal.me/xb6783746)!  
-Your support helps keep dashboards alive and wheels spinning.
+- ✅ Dual **CAN bus** architecture:
+  - 500 kbps — Powertrain CAN (primary signals, gauges, warnings)
+  - 125 kbps — Infotainment / IHS CAN (display, messages, auxiliary data)
 
 ---
 
@@ -29,12 +26,12 @@ Your support helps keep dashboards alive and wheels spinning.
 
 ## 🧱 Architecture Overview
 
-| Component       | Description                           |
-|----------------|---------------------------------------|
-| Python Script   | Reads game telemetry, sends via serial |
-| Arduino/STM32   | Parses serial data, transmits over CAN |
-| MCP2515 #1      | CAN @ 500 kbps (required)              |
-| MCP2515 #2      | CAN @ 125 kbps (optional)              |
+| Component        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| **Python Script**| Reads telemetry from the game and streams structured data over serial       |
+| **Arduino / STM32** | Parses incoming data, applies mapping logic, and transmits CAN frames     |
+| **MCP2515 #1**   | CAN @ 500 kbps — mandatory (powertrain bus: gauges, warnings, core signals) |
+| **MCP2515 #2**   | CAN @ 125 kbps — optional (IHS bus: display, text, auxiliary functions)     |
 
 ---
 
@@ -144,9 +141,9 @@ Enable second CAN bus (IHS).
 #define LEVEL_3 6400 // rpm value
 
 ```
-- `MY23`: activates special handling for Giulia/Stelvio MY2023 cluster.
-- `SHIFT`: enables shift light display on 7" dashboards, don't use on 3.5".
-- `LEVEL_*`: 7" dashboards support 3 SHIFT warning levels. Ensure RACE mode is enabled in the cluster via PROXI alignment.
+- `MY23`: enables dedicated handling for **Giulia/Stelvio MY2023** clusters.
+- `SHIFT`: enables shift light display on **7" clusters** (do not use on 3.5").
+- `LEVEL_*`: defines the 3 available shift warning levels on **7" clusters**. Requires **RACE mode enabled on the cluster** (via PROXI alignment).
 
 Leave them commented unless you need these features.
 ### CAN Bus Settings
@@ -229,11 +226,11 @@ Use the following parameters in Python script:
 
 ### Required Components
 
-- ✅ STM32 or Arduino [i used STM32F401CCU6]
-- ✅ 2x MCP2515 with TJA1050 [both with 120Ω jumper, i soldered pins]
-- ✅ Real Giulia/Stelvio instrument cluster
-- ✅ 12v Power Supply
-- ✅ Some wires and connectors
+- ✅ **STM32 or Arduino**
+- ✅ **2x MCP2515 CAN modules (TJA1050)** *(120Ω termination enabled — jumper or soldered pins)*
+- ✅ **Alfa Romeo Giulia / Stelvio OEM instrument cluster** *(well… obviously)*
+- ✅ **12V power supply**
+- ✅ **Wiring and connectors**
 
 ## 🔌 Connector Pinout
 
@@ -252,14 +249,14 @@ Use the following parameters in Python script:
 | 14  | CAN-C1 B (High)    |
 
 > ⚠️ Notes:
-> - Pins **2 and 3** must be bridged together to +12v.
-> - Pins **11 and 12** are electrically connected together (same for **13 and 14**).  
+> - Pins **2 and 3** must be bridged together to **+12V**.
+> - Pins **11 and 12** are electrically connected (same for **13 and 14**).
 
-> - You can connect either pin in each pair CAN A/B pairing order does not matter.
-> - I personally supply **14.4V** using a variable power supply.
+> - You can use either pin in each pair — **CAN A/B pairing order does not matter**.
+> - I use a variable power supply set to **14.4V**, but any source in the **12V–16V range** works fine.
 
-> - If you don’t have the original OEM connector for the cluster, don’t worry — it’s not a problem.     
->       Standard **Dupont jumper wires** or **2.54mm pitch connectors** (e.g., 2 pieces 1x6) can be used reliably without major issues.
+> - If you don’t have the original OEM cluster connector, it’s not an issue.  
+>   Standard **Dupont jumper wires** or **2.54mm pitch connectors** (2× 1x6) work reliably without major problems.
 
 ### 🔌 SPI & CAN Wiring (STM32)
 
@@ -313,35 +310,47 @@ Use the following parameters in Python script:
 
 ## ✅ Tested With
 
-- BeamNG.drive
-- Assetto Corsa
-- OEM Giulia cluster (2017)
-- STM32F401CCU6 (Black Pill)
-- Arduino Nano
-- Dual MCP2515 (8MHz, TJA1050, 120Ω)
+- **BeamNG.drive**
+- **Assetto Corsa**
+- **Alfa Romeo Giulia OEM cluster (2017 and 2020)**
+- **STM32F401CCU6 (Black Pill)**
+- **Arduino Nano**
+- **Dual MCP2515 modules** *(8 MHz, TJA1050, 120Ω termination)*
 
 ---
 
 ## 🧪 Feature Support
 
-| Feature             | Can Bus                                                  |
-|---------------------|----------------------------------------------------------|
-| **Rpm**             | CAN1                                                     |
-| **Speed**           | CAN1                                                     |
-| **Oil Temperature** | CAN1                                                     |
-| **Fuel Level**      | CAN1                                                     |
-| **ABS Light**       | CAN1 – Only `BeamNg`                                     |
-| **ESC Light**       | CAN1                                                     |
-| **Handbrake Light** | CAN1 – Only `BeamNg`                                     |
-| **DNA**             | CAN1                                                     |
-| **Shift Light**     | CAN1                                                     |
-| **Current Gear**    | CAN1                                                     |
-| **External Temp**   | CAN2 - Realistic in `Assetto Corsa`, dummy in `BeamNg`   |
-| **MEDIA**           | CAN2 - Best Lap in `Assetto Corsa`, dummy in `BeamNg`    |
+| Feature                  | Can Bus                                                                       |
+|--------------------------|-------------------------------------------------------------------------------|
+| **RPM**                  | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **Speed**                | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **Oil Temperature**      | CAN1 – Assetto Corsa / BeamNG (possible mismatch due to static OEM map)       |
+| **Fuel Level**           | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **ABS Light (lamp)**     | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **ABS Active**           | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **ESC Light**            | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **ESC Active (TC/ESP)**  | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **Handbrake Light**      | CAN1 – Only BeamNG                                                            |
+| **Battery Light**        | CAN1 – Only BeamNG                                                            |
+| **Check Engine (MIL)**   | CAN1 – Only BeamNG                                                            |
+| **Left Indicator**       | CAN2 – Only BeamNG                                                            |
+| **Right Indicator**      | CAN2 – Only BeamNG                                                            |
+| **Position Lights**      | CAN2 – Only BeamNG                                                            |
+| **Low Beam**             | CAN2 – Only BeamNG                                                            |
+| **High Beam**            | CAN2 – Only BeamNG                                                            |
+| **Front Fog Lights**     | CAN2 – Only BeamNG                                                            |
+| **Rear Fog Lights**      | CAN2 – Not currently driven by scripts                                        |
+| **Auto Lights**          | CAN2 – Not currently driven by scripts                                        |
+| **DNA Mode**             | CAN1 – BeamNG / Assetto Corsa (limited: Race/Normal only)                     |
+| **Shift Light**          | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **Current Gear**         | CAN1 – BeamNG / Assetto Corsa                                                 |
+| **External Temperature** | CAN2 – Assetto Corsa / BeamNG (BeamNG is static 20°)                          |
+| **MEDIA**                | CAN2 – Assetto Corsa (Best lap, or current if unavailable) / BeamNG (dummy)   |
 
-> ⚠️ When the cluster is in **RACE** profile, **MEDIA** and **External Temp** lines on 7" dashboards are not available and cannot be displayed, this is the OEM behavior.    
+> ⚠️ When the cluster is in **RACE** profile, **MEDIA** and **External Temp** are not shown on 7" displays — this is **OEM behavior**.
 
-> ℹ️ The optional second CAN module (IHS) helps **prevent odometer blinking** by providing additional messages expected by the cluster.
+> ℹ️ The optional second CAN module (IHS) helps **prevent odometer blinking** by supplying additional messages expected by the cluster.
 
 My glorious Setup:
 
@@ -359,27 +368,43 @@ My glorious Setup:
   - On first cluster power-up, a **handbrake system fault warning** may appear.  
     This is expected and will clear automatically after a few seconds.  
 
-  - Development is in progress to remove or map them to game events where possible:
-    - ~~**TPMS (Tire Pressure Monitoring System)**~~
-    - ~~**Power Steering Fault**~~
-    - ~~**Lane Assist / Lane Departure Warning**~~
-    - ~~**Headlights**~~
+  - The following signals depend on game support:
+    - **Primary lights (indicators, headlights, fog lights)** → available only in BeamNG
+    - **Battery / Check Engine** → available only in BeamNG
 
-  - The following warnings are **suppressed**, but not yet synchronized with game logic:
-    - ~~**Airbag**~~
-    - ~~**MIL (Check Engine)**~~
-    - **Clock/Time**
-    - ~~**Turn Signals / Indicators**~~
+  - The following values are approximated:
+    - **Oil temperature (Assetto Corsa)** → derived from water temperature
+    - **DNA (Assetto Corsa)** → simplified (Race / Normal only)
 
 - **BeamNG.drive**:
-  - Enable **OutGauge** in the settings menu.
-  - ~~A **low fuel alert** may briefly appear after respawning.~~
+  - Requires **OutGauge enabled**
+
+  - Fully supported:
+    - Primary lights
+    - Secondary warnings (ABS, ESC, handbrake, battery, MIL)
+    - Gear, RPM, speed, fuel, DNA
+
+  - Limitations:
+    - **Oil temperature may have a mapping mismatch
+    - **External temperature is not transmitted**
 
 - **Assetto Corsa**:
-  - No plugin required — uses native **shared memory** access.
-  - ~~On the **first launch** of Assetto Corsa make sure to **enter the track at least once before running the Python script**.~~
+   - No plugin required — uses **shared memory**
+
+ - Supported:
+   - Core telemetry (RPM, speed, gear, fuel)
+   - Secondary warnings (ABS, ESC)
+   - External temperature
+   - Lap time via MEDIA
+
+ - Limitations:
+   - **No primary lights support** (indicators, headlights, fog lights)
+   - **No handbrake / battery / check engine signals**
 
 ---
+
+☕️ Like the project? [Buy me a coffee](https://paypal.me/xb6783746)!  
+Your support helps keep clusters alive and CAN buses busy.
 
 ## 📜 License
 
