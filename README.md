@@ -360,6 +360,10 @@ My glorious Setup:
 
 ![IMG_20251014_14430014](https://github.com/user-attachments/assets/0277accf-c77f-4760-9844-dffda2b83882)
 
+[![Video 1](https://img.youtube.com/vi/7xaX0xAjisw/hqdefault.jpg)](https://youtu.be/7xaX0xAjisw)
+
+[![Video 2](https://img.youtube.com/vi/Eg9omnD6t6w/hqdefault.jpg)](https://youtu.be/Eg9omnD6t6w)
+
 ---
 
 ## ⚠️ Known Notes
